@@ -21,6 +21,7 @@ btnRestart.onclick = () => {
 };
 
 function nextQuestion(e) {
+  const shuffledQuestions = shuffleQuestions(questions);
   if (e.target.getAttribute("data-correct") === "true") {
     questionsCorrect++;
   }
@@ -34,10 +35,22 @@ function nextQuestion(e) {
 }
 
 function finish() {
-  textFinish.innerHTML = `você acertou ${questionsCorrect} de ${questions.length}`;
+  textFinish.innerHTML = `Você acertou ${questionsCorrect} de ${questions.length}!!`;
   content.style.display = "none";
   contentFinish.style.display = "flex";
 }
+
+function shuffleQuestions(questionArray) {
+  return questionArray
+      .map((question) => ({ ...question, randomIndex: Math.random() })) 
+      .sort((a, b) => a.randomIndex - b.randomIndex) 
+      .map(({ randomIndex, ...question }) => question); 
+}
+
+
+const shuffledQuestions = shuffleQuestions(questions);
+
+
 
 function loadQuestion() {
   spnQtd.innerHTML = `${currentIndex + 1}/${questions.length}`;
@@ -62,4 +75,4 @@ function loadQuestion() {
   });
 }
 
-loadQuestion();
+loadQuestion(shuffledQuestions);
