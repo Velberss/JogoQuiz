@@ -13,7 +13,7 @@ body{
     justify-content: center;
     flex-direction: column;
     gap: 5px;
-    background-image: url("../img/Going.jpeg");
+    background-image: url("./img/Going.jpeg");
     background-size: cover;
     background-position: center center;
 }
