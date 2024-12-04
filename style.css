@@ -1,4 +1,4 @@
-@import url();
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
 *{
     margin: 0;
@@ -13,7 +13,7 @@ body{
     justify-content: center;
     flex-direction: column;
     gap: 5px;
-    background-image: url("../img/Going.jpeg");
+    background-image: url("./img/Going.jpeg");
     background-size: cover;
     background-position: center center;
 }
@@ -75,4 +75,20 @@ button{
 
 .finish button {
     text-align: center center;
+}
+
+@media (min-width: 321px){
+    
+}
+
+@media (min-width: 376px){
+    
+}
+
+@media (min-width: 426px){
+    
+}
+
+@media (min-width: 769px){
+    
 }
